@@ -155,8 +155,8 @@
                     <h5>Stanley Jones</h5>
 
                     <address class="mb-0 font-14 address-lg">
-                        795 Folsom Ave, Suite 600<br />
-                        San Francisco, CA 94107<br />
+                        5/36 Thasala, Thasala road 13<br />
+                        Nakhonsrithammarat, Post 80160<br />
                         <abbr title="Phone">P:</abbr> (123) 456-7890 <br />
                         <abbr title="Mobile">M:</abbr> (+01) 12345 67890
                     </address>
@@ -174,18 +174,18 @@
                         <li>
                             <p class="mb-2">
                                 <span class="font-weight-bold mr-2">Payment Type:</span>
-                                Credit Card
+                                Money Pay
                             </p>
                             <p class="mb-2">
-                                <span class="font-weight-bold mr-2">Provider:</span>
-                                Visa ending in 2851
+                                <span class="font-weight-bold mr-2">Bank :</span>
+                                1600 Bath
                             </p>
                             <p class="mb-2">
-                                <span class="font-weight-bold mr-2">Valid Date:</span>
-                                02/2020
+                                <span class="font-weight-bold mr-2">Coin :</span>
+                                64 Bath
                             </p>
                             <p class="mb-0">
-                                <span class="font-weight-bold mr-2">CVV:</span> xxx
+                                <span class="font-weight-bold mr-2"></span>
                             </p>
                         </li>
                     </ul>

@@ -12,10 +12,10 @@
                                 <li class="breadcrumb-item">
                                     <a href="javascript: void(0);">eCommerce</a>
                                 </li>
-                                <li class="breadcrumb-item active">Orders</li>
+                                <li class="breadcrumb-item active">Sellers</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Orders</h4>
+                        <h4 class="page-title">Sellers</h4>
                     </div>
                 </div>
             </div>
@@ -39,13 +39,6 @@
                                         </form>
                                     </div>
                                 </div>
-                                <div class="col-lg-9">
-                                    <div class="text-lg-right">
-                                        <button type="button" class="btn btn-success mb-2 mr-1">
-                                            Export
-                                        </button>
-                                    </div>
-                                </div>
                                 <!-- end col-->
                             </div>
 
@@ -64,7 +57,7 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <a href="apps-ecommerce-orders-details.html" class="text-body font-weight-bold">#BM9708</a>
+                                                #BM9708
                                             </td>
                                             <td>
                                                 Thitipong
@@ -80,13 +73,13 @@
                                             </td>
 
                                             <td>
-                                                <a href="<?php echo base_url("main_hci/edit_sellers") ?>" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
+                                                <a href="" class="action-icon" data-toggle="modal" data-target="#edit"> <i class="mdi mdi-pencil"></i></a>
                                                 <a href="" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <a href="apps-ecommerce-orders-details.html" class="text-body font-weight-bold">#BM9709</a>
+                                                #BM9709
                                             </td>
                                             <td>
                                                 Murphy
@@ -101,14 +94,14 @@
                                                 5557 North Pendale Street
                                             </td>
                                             <td>
-                                                <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
+                                                <a href="javascript: void(0);" class="action-icon" data-toggle="modal" data-target="#edit"> <i class="mdi mdi-pencil"></i></a>
                                                 <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                             </td>
 
                                         </tr>
                                         <tr>
                                             <td>
-                                                <a href="apps-ecommerce-orders-details.html" class="text-body font-weight-bold">#BM9710</a>
+                                                #BM9710
                                             </td>
                                             <td>
                                                 Freyre
@@ -123,14 +116,14 @@
                                                 C/ Moralzarzal, 86
                                             </td>
                                             <td>
-                                                <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
+                                                <a href="javascript: void(0);" class="action-icon" data-toggle="modal" data-target="#edit"> <i class="mdi mdi-pencil"></i></a>
                                                 <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                             </td>
 
                                         </tr>
                                         <tr>
                                             <td>
-                                                <a href="apps-ecommerce-orders-details.html" class="text-body font-weight-bold">#BM9711</a>
+                                                #BM9711
                                             </td>
                                             <td>
                                                 Petersen
@@ -145,55 +138,13 @@
                                                 12, Berkeley Gardens Blvd
                                             </td>
                                             <td>
-                                                <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
+                                                <a href="javascript: void(0);" class="action-icon" data-toggle="modal" data-target="#edit"> <i class="mdi mdi-pencil"></i></a>
                                                 <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <a href="apps-ecommerce-orders-details.html" class="text-body font-weight-bold">#BM9921</a>
-                                            </td>
-                                            <td>
-                                                Hashimoto
-                                            </td>
-                                            <td>
-                                                Juri
-                                            </td>
-                                            <td>
-                                                650-5556809
-                                            </td>
-                                            <td>
-                                                9408 Furth Circle
-                                            </td>
-                                            <td>
-                                                <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
-                                                <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a href="apps-ecommerce-orders-details.html" class="text-body font-weight-bold">#BM9921</a>
-                                            </td>
-                                            <td>
-                                                Hashimoto
-                                            </td>
-                                            <td>
-                                                Juri
-                                            </td>
-                                            <td>
-                                                650-5556809
-                                            </td>
-                                            <td>
-                                                9408 Furth Circle
-                                            </td>
-                                            <td>
-                                                <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
-                                                <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a href="apps-ecommerce-orders-details.html" class="text-body font-weight-bold">#BM9921</a>
+                                                #BM9921
                                             </td>
                                             <td>
                                                 Hashimoto
@@ -214,7 +165,76 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                <!-- ----------------<<>>------------------------- -->
+                                <!-- Modal -->
+                                <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="editLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content" style="width: 50rem;">
+                                            <div class="modal-header">
+                                                <div class="col-md-5">
+                                                    <h2 class="modal-title" id="editLabel">Edit</h2>
+                                                </div>
+                                            </div>
+
+                                            <!-- modal-body -->
+                                            <div class="modal-body" style="width: 50rem;">
+                                                <!-- start code -->
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <form>
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="">First Name </label>
+                                                                    <br />
+                                                                    <input type="text" class="form-control" placeholder="First Name" id="fname1" />
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="">Last Name </label>
+                                                                    <br />
+                                                                    <input type="text" class="form-control" placeholder="Last Name" id="lname1" />
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="">Phone </label>
+                                                                    <br />
+                                                                    <input type="text" class="form-control" placeholder="Phone" id="tel1" />
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="">Address </label>
+                                                                    <br />
+                                                                    <input type="text" class="form-control" placeholder="Address" id="add1" />
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="row">
+                                                        <!-- button -->
+                                                        <div class="col-md-6 text-right">
+                                                            <!-- save -->
+                                                            <button type="button" id="btn_add" class="btn btn-primary">
+                                                                <i href="" id="save_edit" class="nc-icon nc-simple-add">Save</i>
+                                                            </button>
+
+                                                        </div>
+
+                                                        <div class="col-md-6 text-left">
+                                                            <!-- cancel -->
+                                                            <button type="button" id="btn_close" class="btn btn-info" data-dismiss="modal">
+                                                                <i href="" id="cancel_edit" class="nc-icon nc-simple-remove">Cancel</i>
+                                                            </button>
+                                                        </div>
+                                                        <!-- end  button -->
+                                                    </div>
+                                                </div>
+                                                <!-- end code -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end modal -->
+                                <!-- ----------------<<>>------------------------- -->
+                                <!-- ----------------<<>>------------------------- -->
                             </div>
+                            <!-- ----------------<<>>------------------------- -->
                         </div>
                         <!-- end card-body-->
                     </div>

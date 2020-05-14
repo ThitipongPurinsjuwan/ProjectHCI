@@ -9,6 +9,11 @@ class Main_hci extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->view('layout_hci/login_hci');
+	}
+
+	public function home()
+	{
 		$this->load->view('layout_hci/1_head');
 		$this->load->view('layout_hci/2_left_menu');
 		$this->load->view('layout_hci/3_top_bar');
@@ -90,6 +95,28 @@ class Main_hci extends CI_Controller {
 		$this->load->view('layout_hci/2_left_menu');
 		$this->load->view('layout_hci/3_top_bar');
 		$this->load->view('layout_hci/content/4_content_stock');
+		$this->load->view('layout_hci/5_footer');
+		$this->load->view('layout_hci/6_right_bar');
+		$this->load->view('layout_hci/7_foot');
+	}
+
+	public function order_seller()
+	{
+		$this->load->view('layout_hci/1_head');
+		$this->load->view('layout_hci/2_left_menu');
+		$this->load->view('layout_hci/3_top_bar');
+		$this->load->view('layout_hci/content/4_content_order_seller');
+		$this->load->view('layout_hci/5_footer');
+		$this->load->view('layout_hci/6_right_bar');
+		$this->load->view('layout_hci/7_foot');
+	}
+
+	public function bonus_sellers()
+	{
+		$this->load->view('layout_hci/1_head');
+		$this->load->view('layout_hci/2_left_menu');
+		$this->load->view('layout_hci/3_top_bar');
+		$this->load->view('layout_hci/content/4_content_bonus_seller');
 		$this->load->view('layout_hci/5_footer');
 		$this->load->view('layout_hci/6_right_bar');
 		$this->load->view('layout_hci/7_foot');

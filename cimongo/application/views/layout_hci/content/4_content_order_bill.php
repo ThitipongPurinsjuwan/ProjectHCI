@@ -7,12 +7,12 @@
             <div class="page-title-box">
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="javascript: void(0);">Hyper</a></li>
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">BUYDAY</a></li>
                         <li class="breadcrumb-item"><a href="javascript: void(0);">eCommerce</a></li>
-                        <li class="breadcrumb-item active">Orders</li>
+                        <li class="breadcrumb-item active">Bill</li>
                     </ol>
                 </div>
-                <h4 class="page-title">Orders</h4>
+                <h4 class="page-title">Bill</h4>
             </div>
         </div>
     </div>
@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-lg-3">
                             <div class="text-lg-right">
-                                <button type="button" style="width: 125px;" class="btn btn-success mb-2 mr-3"><i class="mdi mdi-content-save-all-outline"></i> Save</button>
+                                <a href="<?php echo base_url("main_hci/order_add") ?>" type="button" style="width: 125px;" class="btn btn-success mb-2 mr-3"><i class="mdi mdi-content-save-all-outline"></i> Save</a>
                             </div>
                         </div>
                     </div>
@@ -45,9 +45,9 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th>Product</th>
-                                    <th>Withdraw</th>
+                                    <th>Withdraw :</th>
                                     <th>Sum</th>
-                                    <th>Deposit</th>
+                                    <th>Deposit :</th>
                                     <th>Price</th>
                                     <th style="width: 125px;">Total</th>
                                 </tr>

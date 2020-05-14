@@ -80,7 +80,7 @@
                                             </td>
 
                                             <td>
-                                                <button type="button" class="btn btn-info mb-2 mr-2"><i class="mdi mdi-file-document-edit-outline mr-1"></i> Edit</button>
+                                                <button type="button" class="btn btn-info mb-2 mr-2" data-toggle="modal" data-target="#edit"><i class="mdi mdi-file-document-edit-outline mr-1"></i> Edit</button>
                                                 <button type="button" class="btn btn-danger mb-2 mr-2"><i class="mdi mdi-delete-forever mr-1"></i> Delete</button>
                                             </td>
                                         </tr>
@@ -215,7 +215,73 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                <!-- ----------------<<>>------------------------- -->
+                                <!-- Modal -->
+                                <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="editLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content" style="width: 50rem;">
+                                            <div class="modal-header">
+                                                <div class="col-md-5">
+                                                    <h4 class="modal-title" id="editLabel">Edit</h4>
+                                                </div>
+                                            </div>
+
+                                            <!-- modal-body -->
+                                            <div class="modal-body" style="width: 50rem;">
+                                                <!-- start code -->
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <form>
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="">First Name </label>
+                                                                    <br />
+                                                                    <input type="text" class="form-control" placeholder="First Name" id="fname1" readonly />
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="">Last Name </label>
+                                                                    <br />
+                                                                    <input type="text" class="form-control" placeholder="Last Name" id="lname1" readonly />
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="">Phone </label>
+                                                                    <br />
+                                                                    <input type="text" class="form-control" placeholder="Phone" id="tel1" readonly />
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="">Address </label>
+                                                                    <br />
+                                                                    <input type="text" class="form-control" placeholder="Address" id="add1" readonly />
+                                                                </div>
+                                                            </div>
+                                                        </form>
+
+                                                        <!-- button -->
+                                                        <div class="text-md-right">
+                                                            <div class="col-md text-right">
+                                                                <!-- save -->
+                                                                <button type="button" id="btn_add" class="btn btn-primary">
+                                                                    <i href="" id="save_edit" class="nc-icon nc-simple-add">Save</i>
+                                                                </button>
+                                                                <!-- cancel -->
+                                                                <button type="button" id="btn_close" class="btn btn-info">
+                                                                    <i href="" id="cancel_edit" class="nc-icon nc-simple-remove">Cancel</i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <!-- end  button -->
+                                                    </div>
+                                                </div>
+                                                <!-- end code -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end modal -->
+                                <!-- ----------------<<>>------------------------- -->
+                                <!-- ----------------<<>>------------------------- -->
                             </div>
+                            <!-- ----------------<<>>------------------------- -->
                         </div>
                         <!-- end card-body-->
                     </div>

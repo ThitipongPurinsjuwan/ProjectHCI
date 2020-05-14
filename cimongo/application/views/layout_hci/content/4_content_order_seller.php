@@ -33,20 +33,15 @@
                                                         <option value="2">Processing</option>
                                                         <option value="3">Unsuccessful</option>
                                                     </select>
-                                                    <label for="status-select" class="ml-4">
-                                                        <h4>Amon kumpougmit</h4>
-                                                    </label>
                                                 </div>
-
                                             </form>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="text-lg-right">
-                                                <a href="<?php echo base_url("main_hci/order_bill") ?>" type="button" class="btn btn-info mb-2 mr-1"><i class="mdi mdi-plus-circle mr-2"></i>Add Order</a>
+                                                <button type="button" class="btn btn-success mb-2 mr-1">Export</button>
                                             </div>
                                         </div><!-- end col-->
                                     </div>
-
                                     <div class="table-responsive">
                                         <table class="table table-centered mb-0">
                                             <thead class="thead-light">
@@ -61,30 +56,27 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-
-                                                    <td><a href="apps-ecommerce-orders-details.html" class="text-body font-weight-bold">#BM9708</a> </td>
+                                                    <td>#BM9708</td>
                                                     <td>
-                                                    Amon kumpougmit
+                                                        Amon kumpougmit
                                                     </td>
                                                     <td>
-                                                        August 05 2018
+                                                        August 06 2018
                                                     </td>
                                                     <td>
                                                         $176.41
                                                     </td>
-
                                                     <td>
-                                                        <h5><span class="badge badge-success-lighten">Success</span>
-                                                        </h5>
+                                                        <h5><span class="badge badge-success-lighten">Success</span></h5>
                                                     </td>
                                                     <td>
                                                         <a href="<?php echo base_url("main_hci/orderdetail") ?>" class="action-icon"> <i class="mdi mdi-eye"></i></a>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><a href="apps-ecommerce-orders-details.html" class="text-body font-weight-bold">#BM9709</a> </td>
+                                                    <td>#BM9709</td>
                                                     <td>
-                                                    Amon kumpougmit
+                                                        Amon kumpougmit
                                                     </td>
                                                     <td>
                                                         August 05 2018
@@ -93,57 +85,50 @@
                                                         $176.41
                                                     </td>
                                                     <td>
-                                                        <h5><span class="badge badge-warning-lighten">processing</span>
-                                                        </h5>
+                                                        <h5><span class="badge badge-warning-lighten">processing</span></h5>
                                                     </td>
                                                     <td>
                                                         <a href="<?php echo base_url("main_hci/orderdetail") ?>" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                                        <a href="<?php echo base_url("main_hci/order_bill") ?>" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
+                                                        <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><a href="apps-ecommerce-orders-details.html" class="text-body font-weight-bold">#BM9710</a> </td>
+                                                    <td>#BM9710</td>
                                                     <td>
-                                                    Amon kumpougmit
+                                                        Amon kumpougmit
                                                     </td>
                                                     <td>
-                                                        August 05 2018
+                                                        August 04 2018
                                                     </td>
                                                     <td>
                                                         $176.41
                                                     </td>
-
                                                     <td>
-                                                        <h5><span class="badge badge-danger-lighten">Unsuccessful</span>
-                                                        </h5>
+                                                        <h5><span class="badge badge-danger-lighten">Unsuccessful</span></h5>
                                                     </td>
                                                     <td>
                                                         <a href="<?php echo base_url("main_hci/orderdetail") ?>" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                                        <a href="<?php echo base_url("main_hci/order_bill") ?>" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
+                                                        <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
                                                     </td>
                                                 </tr>
                                                 <tr>
-
-                                                    <td><a href="apps-ecommerce-orders-details.html" class="text-body font-weight-bold">#BM9711</a> </td>
+                                                    <td>#BM9711</td>
                                                     <td>
-                                                    Amon kumpougmit
+                                                        Amon kumpougmit
                                                     </td>
                                                     <td>
-                                                        August 05 2018
+                                                        August 03 2018
                                                     </td>
                                                     <td>
                                                         $176.41
                                                     </td>
-
                                                     <td>
-                                                        <h5><span class="badge badge-success-lighten">Success</span>
-                                                        </h5>
+                                                        <h5><span class="badge badge-success-lighten">Success</span></h5>
                                                     </td>
                                                     <td>
                                                         <a href="<?php echo base_url("main_hci/orderdetail") ?>" class="action-icon"> <i class="mdi mdi-eye"></i></a>
                                                     </td>
                                                 </tr>
-
                                             </tbody>
                                         </table>
                                     </div>

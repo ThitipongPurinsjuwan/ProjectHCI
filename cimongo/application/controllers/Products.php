@@ -15,6 +15,12 @@ class Products extends CI_Controller
         $search = $this->input->get('search');
         $name = $this->input->get('name');
         $categories_id = $this->input->get('categories_id');
+        $a = [
+            'search' => $search
+        ];
+        echo "<pre>";
+        print_r($a);
+        echo "</pre>";
 
         $condition = [];
         if (!empty($search)) {

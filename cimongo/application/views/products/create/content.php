@@ -31,7 +31,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="text-center"><button type="submit" class="btn btn-success"><i class="far fa-save"></i> บันทึก</button></div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success"><i class="far fa-save"></i> บันทึก</button>
+                    </div>
                 </form>
             </div>
         </section>

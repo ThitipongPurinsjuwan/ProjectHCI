@@ -7,16 +7,12 @@
                             <div class="page-title-box">
                                 <div class="page-title-right">
                                     <form class="form-inline">
-
-                                        <a href="javascript: void(0);" class="btn btn-primary ml-2">
+                                        <a href="<?php echo base_url("main_hci/home") ?>" class="btn btn-primary ml-2">
                                             <i class="mdi mdi-autorenew"></i>
-                                        </a>
-                                        <a href="javascript: void(0);" class="btn btn-primary ml-1">
-                                            <i class="mdi mdi-filter-variant"></i>
                                         </a>
                                     </form>
                                 </div>
-                                <h4 class="page-title">Home</h4>
+                                <h2 class="page-title">Home</h2>
                             </div>
                         </div>
                     </div>
@@ -129,7 +125,7 @@
                                         <div class="col">
                                             <div class="card widget-flat">
                                                 <div class="card-body">
-                                                    <img class="fluid" style="width: 30%; height: 30%;" src="assets/images/products/product-1.jpg" alt="" srcset="">
+                                                    <a href="<?php echo base_url("main_hci/order_add") ?>"><img class="fluid" style="width: 30%; height: 30%;" src="<?php echo base_url("public/assets/images/users/avatar-5.jpg") ?>" alt="" srcset=""></a>
                                                     <h5 class="text-muted font-weight-normal mt-0" title="Number of Customers">
                                                         Kanya Pankong</h5>
                                                     <h4 class="mt-3 mb-3">Status <span class="badge badge-success-lighten">Success</span></h4>
@@ -140,7 +136,7 @@
                                         <div class="col">
                                             <div class="card widget-flat">
                                                 <div class="card-body">
-                                                    <img class="fluid" style="width: 30%; height: 30%;" src="assets/images/products/product-2.jpg" alt="" srcset="">
+                                                    <a href="<?php echo base_url("main_hci/order_add") ?>"><img class="fluid" style="width: 30%; height: 30%;" src="<?php echo base_url("public/assets/images/users/avatar-4.jpg") ?>" alt="" srcset=""></a>
                                                     <h5 class="text-muted font-weight-normal mt-0" title="Number of Customers">
                                                         Amon kumpougmit</h5>
                                                     <h4 class="mt-3 mb-3">Status <span class="badge badge-success-lighten">Success</span></h4>
@@ -151,7 +147,7 @@
                                         <div class="col">
                                             <div class="card widget-flat">
                                                 <div class="card-body">
-                                                    <img class="fluid" style="width: 30%; height: 30%;" src="assets/images/products/product-3.jpg" alt="" srcset="">
+                                                    <a href="<?php echo base_url("main_hci/order_add") ?>"><img class="fluid" style="width: 30%; height: 30%;" src="<?php echo base_url("public/assets/images/users/avatar-3.jpg") ?>" alt="" srcset=""></a>
                                                     <h5 class="text-muted font-weight-normal mt-0" title="Number of Orders">
                                                         wilawan soisman</h5>
                                                     <h4 class="mt-3 mb-3">Status <span class="badge badge-success-lighten">Success</span></h4>
@@ -162,7 +158,7 @@
                                         <div class="col">
                                             <div class="card widget-flat">
                                                 <div class="card-body">
-                                                    <img class="fluid" style="width: 30%; height: 30%;" src="assets/images/products/product-4.jpg" alt="" srcset="">
+                                                    <img class="fluid" style="width: 30%; height: 30%;" src="<?php echo base_url("public/assets/images/users/avatar-2.jpg") ?>" alt="" srcset="">
                                                     <h5 class="text-muted font-weight-normal mt-0" title="Average Revenue">
                                                         kapa</h5>
                                                     <h4 class="mt-3 mb-3">Status <span class="badge badge-danger-lighten">Unsuccessful</span></h4>
@@ -174,7 +170,7 @@
                                         <div class="col">
                                             <div class="card widget-flat">
                                                 <div class="card-body">
-                                                    <img class="fluid" style="width: 30%; height: 30%;" src="assets/images/products/product-5.jpg" alt="" srcset="">
+                                                    <img class="fluid" style="width: 30%; height: 30%;" src="<?php echo base_url("public/assets/images/users/avatar-1.jpg") ?>" alt="" srcset="">
                                                     <h5 class="text-muted font-weight-normal mt-0" title="Growth">
                                                         Pinsuwan
                                                     </h5>
@@ -184,10 +180,6 @@
                                             </div> <!-- end card-->
                                         </div> <!-- end col-->
                                     </div> <!-- end row -->
-
-                                    <!-- <div style="height: 263px;" class="chartjs-chart">
-                                            <canvas id="high-performing-product"></canvas>
-                                        </div> -->
                                 </div> <!-- end card-body-->
                             </div> <!-- end card-->
 
