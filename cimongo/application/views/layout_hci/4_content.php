@@ -86,7 +86,7 @@
 
                     <!-- row bonus sellers -->
                     <div class="row">
-                        <div class="col-xl-12  col-lg-12">
+                        <div class="col-xl-12  col-lg-10">
                             <div class="card text-center">
                                 <div class="card-body">
                                     <div class="dropdown float-right">
@@ -105,134 +105,170 @@
                                         </div>
                                     </div>
                                     <h2 class="header-title mb-3">Bonus Of Sellers</h2>
-                                    <?php
+                                    <center>
+                                        <?php
 
-                                    $dataPoints = array(
-                                        array("label" => "Jytte Petersen", "y" => 5000),
-                                        array("label" => "Christina Berglund", "y" => 3000),
-                                        array("label" => "Wendy Victorino", "y" => 5000),
-                                        array("label" => "Keith Franco", "y" => 5000),
-                                        array("label" => "Marie Bertrand", "y" => 4000),
-                                        array("label" => "Leslie Taylor", "y" => 5000)
-                                    );
-
-                                    ?>
-
-                                    <script>
-                                        window.onload = function() {
-
-                                            var chart = new CanvasJS.Chart("chartContainer", {
-                                                animationEnabled: true,
-                                                exportEnabled: true,
-
-                                                data: [{
-                                                    type: "pie",
-                                                    showInLegend: "true",
-                                                    legendText: "{label}",
-                                                    indexLabelFontSize: 16,
-                                                    indexLabel: "{label} - #percent%",
-                                                    yValueFormatString: "฿#,##0",
-                                                    dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-                                                }]
-                                            });
-                                            chart.render();
-
-                                        }
-                                    </script>
+                                        $dataPoints1 = array(
+                                            array("label" => "Jytte Petersen", "y" => 1000),
+                                            array("label" => "Christina Berglund", "y" => 2000),
+                                            array("label" => "Wendy Victorino", "y" => 1500),
+                                            array("label" => "Keith Franco", "y" => 3000),
+                                            array("label" => "Marie Bertrand", "y" => 1200),
+                                            array("label" => "Leslie Taylor", "y" => 1000)
+                                        );
 
 
-                                    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-                                    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                                        $dataPoints2 = array(
+                                            array("label" => "Jytte Petersen", "y" => 5000),
+                                            array("label" => "Christina Berglund", "y" => 3000),
+                                            array("label" => "Wendy Victorino", "y" => 5000),
+                                            array("label" => "Keith Franco", "y" => 5000),
+                                            array("label" => "Marie Bertrand", "y" => 4000),
+                                            array("label" => "Leslie Taylor", "y" => 5000)
+                                        );
 
+                                        ?>
 
-                                </div>
+                                        <script>
+                                            window.onload = function() {
 
-                                <!-- <div style="height: 263px;" class="chartjs-chart">
+                                                var chart = new CanvasJS.Chart("chartContainer", {
+
+                                                    theme: "light2",
+                                                    animationEnabled: true,
+                                                    toolTip: {
+                                                        shared: true,
+                                                        reversed: true
+                                                    },
+                                                    axisY: {
+                                                        title: " ",
+                                                        suffix: " baht"
+                                                    },
+                                                    legend: {
+                                                        cursor: "pointer",
+                                                        itemclick: toggleDataSeries
+                                                    },
+                                                    data: [{
+                                                        type: "stackedColumn",
+                                                        name: "Bonuses that employees can make",
+                                                        showInLegend: true,
+                                                        yValueFormatString: "#,##0 baht",
+                                                        dataPoints: <?php echo json_encode($dataPoints1, JSON_NUMERIC_CHECK); ?>
+                                                    }, {
+                                                        type: "stackedColumn",
+                                                        name: "Full bonus",
+                                                        showInLegend: true,
+                                                        yValueFormatString: "#,##0 baht",
+                                                        backgroundColor: 'Gray51',
+
+                                                        dataPoints: <?php echo json_encode($dataPoints2, JSON_NUMERIC_CHECK); ?>
+                                                    }]
+                                                });
+
+                                                chart.render();
+
+                                                function toggleDataSeries(e) {
+                                                    if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                                                        e.dataSeries.visible = false;
+                                                    } else {
+                                                        e.dataSeries.visible = true;
+                                                    }
+                                                    e.chart.render();
+                                                }
+
+                                            }
+                                        </script>
+
+                                        <div id="chartContainer" style="height: 400px; width: 55%;"></div>
+                                        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+                                    </center>
+                                    <!-- <div style="height: 263px;" class="chartjs-chart">
                                             <canvas id="high-performing-product"></canvas>
                                         </div> -->
-                            </div> <!-- end card-body-->
-                        </div> <!-- end card-->
+                                </div> <!-- end card-body-->
+                            </div> <!-- end card-->
 
-                    </div> <!-- end col -->
-                </div>
+                        </div> <!-- end col -->
+                    </div>
 
-                <!-- row sellers -->
-                <div class="row">
-                    <div class="col-xl-12  col-lg-12">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h4 class="header-title mb-3">Sellers</h4>
-                                <div class="row">
+                    <!-- row sellers -->
+                    <div class="row">
+                        <div class="col-xl-12  col-lg-12">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h4 class="header-title mb-3">Sellers</h4>
+                                    <div class="row">
 
-                                    <div class="col">
-                                        <div class="card widget-flat">
-                                            <div class="card-body">
-                                                <img class="fluid" style="width: 30%; height: 30%;" src="assets/images/products/product-1.jpg" alt="" srcset="">
-                                                <h5 class="text-muted font-weight-normal mt-0" title="Number of Customers">
-                                                    Kanya Pankong</h5>
-                                                <h4 class="mt-3 mb-3">Status <span class="badge badge-success-lighten">Success</span></h4>
-                                            </div> <!-- end card-body-->
-                                        </div> <!-- end card-->
-                                    </div> <!-- end col-->
+                                        <div class="col">
+                                            <div class="card widget-flat">
+                                                <div class="card-body">
+                                                    <img class="fluid" style="width: 30%; height: 30%;" src="assets/images/products/product-1.jpg" alt="" srcset="">
+                                                    <h5 class="text-muted font-weight-normal mt-0" title="Number of Customers">
+                                                        Kanya Pankong</h5>
+                                                    <h4 class="mt-3 mb-3">Status <span class="badge badge-success-lighten">Success</span></h4>
+                                                </div> <!-- end card-body-->
+                                            </div> <!-- end card-->
+                                        </div> <!-- end col-->
 
-                                    <div class="col">
-                                        <div class="card widget-flat">
-                                            <div class="card-body">
-                                                <img class="fluid" style="width: 30%; height: 30%;" src="assets/images/products/product-2.jpg" alt="" srcset="">
-                                                <h5 class="text-muted font-weight-normal mt-0" title="Number of Customers">
-                                                    Amon kumpougmit</h5>
-                                                <h4 class="mt-3 mb-3">Status <span class="badge badge-success-lighten">Success</span></h4>
-                                            </div> <!-- end card-body-->
-                                        </div> <!-- end card-->
-                                    </div> <!-- end col-->
+                                        <div class="col">
+                                            <div class="card widget-flat">
+                                                <div class="card-body">
+                                                    <img class="fluid" style="width: 30%; height: 30%;" src="assets/images/products/product-2.jpg" alt="" srcset="">
+                                                    <h5 class="text-muted font-weight-normal mt-0" title="Number of Customers">
+                                                        Amon kumpougmit</h5>
+                                                    <h4 class="mt-3 mb-3">Status <span class="badge badge-success-lighten">Success</span></h4>
+                                                </div> <!-- end card-body-->
+                                            </div> <!-- end card-->
+                                        </div> <!-- end col-->
 
-                                    <div class="col">
-                                        <div class="card widget-flat">
-                                            <div class="card-body">
-                                                <img class="fluid" style="width: 30%; height: 30%;" src="assets/images/products/product-3.jpg" alt="" srcset="">
-                                                <h5 class="text-muted font-weight-normal mt-0" title="Number of Orders">
-                                                    wilawan soisman</h5>
-                                                <h4 class="mt-3 mb-3">Status <span class="badge badge-success-lighten">Success</span></h4>
+                                        <div class="col">
+                                            <div class="card widget-flat">
+                                                <div class="card-body">
+                                                    <img class="fluid" style="width: 30%; height: 30%;" src="assets/images/products/product-3.jpg" alt="" srcset="">
+                                                    <h5 class="text-muted font-weight-normal mt-0" title="Number of Orders">
+                                                        wilawan soisman</h5>
+                                                    <h4 class="mt-3 mb-3">Status <span class="badge badge-success-lighten">Success</span></h4>
 
-                                            </div> <!-- end card-body-->
-                                        </div> <!-- end card-->
-                                    </div> <!-- end col-->
-                                    <div class="col">
-                                        <div class="card widget-flat">
-                                            <div class="card-body">
-                                                <img class="fluid" style="width: 30%; height: 30%;" src="assets/images/products/product-4.jpg" alt="" srcset="">
-                                                <h5 class="text-muted font-weight-normal mt-0" title="Average Revenue">
-                                                    kapa</h5>
-                                                <h4 class="mt-3 mb-3">Status <span class="badge badge-danger-lighten">Unsuccessful</span></h4>
+                                                </div> <!-- end card-body-->
+                                            </div> <!-- end card-->
+                                        </div> <!-- end col-->
+                                        <div class="col">
+                                            <div class="card widget-flat">
+                                                <div class="card-body">
+                                                    <img class="fluid" style="width: 30%; height: 30%;" src="assets/images/products/product-4.jpg" alt="" srcset="">
+                                                    <h5 class="text-muted font-weight-normal mt-0" title="Average Revenue">
+                                                        kapa</h5>
+                                                    <h4 class="mt-3 mb-3">Status <span class="badge badge-danger-lighten">Unsuccessful</span></h4>
 
-                                            </div> <!-- end card-body-->
-                                        </div> <!-- end card-->
-                                    </div> <!-- end col-->
+                                                </div> <!-- end card-body-->
+                                            </div> <!-- end card-->
+                                        </div> <!-- end col-->
 
-                                    <div class="col">
-                                        <div class="card widget-flat">
-                                            <div class="card-body">
-                                                <img class="fluid" style="width: 30%; height: 30%;" src="assets/images/products/product-5.jpg" alt="" srcset="">
-                                                <h5 class="text-muted font-weight-normal mt-0" title="Growth">
-                                                    Pinsuwan
-                                                </h5>
-                                                <h4 class="mt-3 mb-3">Status <span class="badge badge-warning-lighten">Processing</span></h4>
+                                        <div class="col">
+                                            <div class="card widget-flat">
+                                                <div class="card-body">
+                                                    <img class="fluid" style="width: 30%; height: 30%;" src="assets/images/products/product-5.jpg" alt="" srcset="">
+                                                    <h5 class="text-muted font-weight-normal mt-0" title="Growth">
+                                                        Pinsuwan
+                                                    </h5>
+                                                    <h4 class="mt-3 mb-3">Status <span class="badge badge-warning-lighten">Processing</span></h4>
 
-                                            </div> <!-- end card-body-->
-                                        </div> <!-- end card-->
-                                    </div> <!-- end col-->
-                                </div> <!-- end row -->
+                                                </div> <!-- end card-body-->
+                                            </div> <!-- end card-->
+                                        </div> <!-- end col-->
+                                    </div> <!-- end row -->
 
-                                <!-- <div style="height: 263px;" class="chartjs-chart">
+                                    <!-- <div style="height: 263px;" class="chartjs-chart">
                                             <canvas id="high-performing-product"></canvas>
                                         </div> -->
-                            </div> <!-- end card-body-->
-                        </div> <!-- end card-->
+                                </div> <!-- end card-body-->
+                            </div> <!-- end card-->
 
-                    </div> <!-- end col -->
-                </div>
+                        </div> <!-- end col -->
+                    </div>
 
-                <!-- end row -->
+                    <!-- end row -->
                 </div>
                 <!-- container -->
 
