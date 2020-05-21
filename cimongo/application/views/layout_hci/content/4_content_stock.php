@@ -1,6 +1,61 @@
 <!-- Start Content-->
 <div class="container-fluid">
-
+    <!-- Alert box -->
+    <?php if ($this->session->flashdata('success')) { ?>
+        <div class="row mt-2">
+            <div class="col-md-12">
+                <div class="alert alert-success" role="alert">
+                    <i class="dripicons-checkmark mr-2"></i> your product <strong>success added</strong> .
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+    <?php if ($this->session->flashdata('false_insert_product_bill')) { ?>
+        <div class="row mt-2">
+            <div class="col-md-12">
+                <div class="alert alert-danger" role="alert">
+                    <i class="dripicons-wrong mr-2"></i> your product <strong>false</strong> to add in <strong> productl </strong> collection.
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+    <?php if ($this->session->flashdata('false_insert_product')) { ?>
+        <div class="row mt-2">
+            <div class="col-md-12">
+                <div class="alert alert-danger" role="alert">
+                    <i class="dripicons-wrong mr-2"></i> your product <strong>false</strong> to add in <strong> product_bill </strong> collection.
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+    <?php if ($this->session->flashdata('false_insert_product_name')) { ?>
+        <div class="row mt-2">
+            <div class="col-md-12">
+                <div class="alert alert-danger" role="alert">
+                    <i class="dripicons-wrong mr-2"></i> your product <strong>duplicate name</strong> to add in <strong> product </strong> collection.
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+    <?php if ($this->session->flashdata('add_quntity_false')) { ?>
+        <div class="row mt-2">
+            <div class="col-md-12">
+                <div class="alert alert-danger" role="alert">
+                    <i class="dripicons-wrong mr-2"></i> your product <strong>false</strong> to add quntity in <strong> product </strong> collection.
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+    <?php if ($this->session->flashdata('add_quntity_success')) { ?>
+        <div class="row mt-2">
+            <div class="col-md-12">
+                <div class="alert alert-danger" role="alert">
+                    <i class="dripicons-wrong mr-2"></i> your product <strong>success</strong> to add quntity in <strong> product </strong> collection.
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+    <!-- End alert box -->
     <!-- start page title -->
     <div class="row">
         <div class="col-12">
@@ -33,48 +88,35 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Product</th>
+                                    <th>Unit</th>
                                     <th>Price</th>
                                     <th>Quantity</th>
                                     <th style="width: 125px;">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        72001451
-                                    </td>
-                                    <td>
-                                        Wooden Chairs
-                                    </td>
-                                    <td>
-                                        $8.99
-                                    </td>
-                                    <td>
-                                        1,874
-                                    </td>
-                                    <td class="table-action">
-                                        <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                        <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        72001452
-                                    </td>
-                                    <td>
-                                        Aooden Chairs
-                                    </td>
-                                    <td>
-                                        $8.99
-                                    </td>
-                                    <td>
-                                        1,874
-                                    </td>
-                                    <td class="table-action">
-                                        <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                        <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                    </td>
-                                </tr>
+                                <?php foreach ($products_stock as $row) {  ?>
+                                    <tr>
+                                        <td>
+                                            <?php echo $row['product_id'] ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row['product_name'] ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row['unit'] ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row['price'] ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row['quntity'] ?>
+                                        </td>
+                                        <td>
+                                            <a href="<?php echo base_url("main_hci/add_quntity/".$row['product_id']."/".$row['quntity']) ?>" class="action-icon"><i class="uil uil-plus"></i></a>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
@@ -84,7 +126,7 @@
     </div>
     <!-- end row -->
 
-    <!-- Modal -->
+    <!-- Modal add product -->
     <div class="modal fade" id="add_product" tabindex="-1" role="dialog" aria-labelledby="editLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content" style="width: 30rem;">
@@ -97,45 +139,55 @@
                 <!-- modal-body -->
                 <div class="modal-body">
                     <!-- start code -->
-                    <div class="card-body">
-                        <div class="row">
-                            <form>
+                    <form action="<?php echo base_url('main_hci/save') ?>" method="POST">
+                        <div class="card-body">
+                            <div class="row">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="">Product</label>
                                         <br />
-                                        <input type="text" class="form-control" placeholder="Product" id="prod" />
+                                        <input type="text" class="form-control" placeholder="Product" name="product_name_stock" id="product_name_stock" />
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-2">
+                                        <label for="">Unit</label>
+                                        <br />
+                                        <input type="text" class="form-control" placeholder="unit" name="unit_stock" id="unit_stock" />
+                                    </div>
+                                    <div class="form-group col-md-2">
                                         <label for="">Price</label>
                                         <br />
-                                        <input type="text" class="form-control" placeholder="Price" id="pri" />
+                                        <input type="text" class="form-control" placeholder="ราคาทุน..." name="price_stock" id="price_stock" />
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="">Sales</label>
+                                        <br />
+                                        <input type="text" class="form-control" placeholder="ราคาขาย..." name="price_sales" id="price_sales" />
                                     </div>
                                 </div>
-                            </form>
-                            <!-- button -->
-                            <!-- end  button -->
-                        </div>
-                        <div class="row">
-                            <div class="col-md text-right">
-                                <!-- save -->
-                                <button type="button" id="btn_add" class="btn btn-primary" data-toggle="modal" data-target="#alert">
-                                    <i href="" id="save_edit" class="nc-icon nc-simple-add">Save</i>
-                                </button>
-                                <!-- cancel -->
-                                <button type="button" id="btn_close" class="btn btn-info" >
-                                    <i href="" id="cancel_edit" class="nc-icon nc-simple-remove">Cancel</i>
-                                </button>
+                                <!-- button -->
+                                <!-- end  button -->
                             </div>
+                            <div class="row">
+                                <div class="col-md text-right">
+                                    <!-- save -->
+                                    <button type="submit" id="btn_add" class="btn btn-primary" data-toggle="modal">
+                                        <i href="" id="save_edit" class="nc-icon nc-simple-add">Save</i>
+                                    </button>
+                                    <!-- cancel -->
+                                    <button type="button" id="btn_close" class="btn btn-info" data-dismiss="modal">
+                                        <i href="" id="cancel_edit" class="nc-icon nc-simple-remove">Cancel</i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- end code -->
                         </div>
-                        <!-- end code -->
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
         <!-- end modal -->
         <!-- ----------------<<>>------------------------- -->
-        <!-- Modal -->
+
         <div class="modal fade" id="alert" tabindex="-1" role="dialog" aria-labelledby="editLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">

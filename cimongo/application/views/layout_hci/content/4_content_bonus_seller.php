@@ -53,77 +53,22 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        Thitipong
-                                    </td>
-                                    <td>
-                                        Purinsuwan
-                                    </td>
-                                    <td>
-                                        6500
-                                    </td>
-                                    <td>
-                                        15000
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Murphy
-                                    </td>
-                                    <td>
-                                        Julie
-                                    </td>
-                                    <td>
-                                        9250
-                                    </td>
-                                    <td>
-                                        12000
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Freyre
-                                    </td>
-                                    <td>
-                                        Diego
-                                    </td>
-                                    <td>
-                                        6400
-                                    </td>
-                                    <td>
-                                        12500
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Petersen
-                                    </td>
-                                    <td>
-                                        Jytte
-                                    </td>
-                                    <td>
-                                        10500
-                                    </td>
-                                    <td>
-                                        15000
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Hashimoto
-                                    </td>
-                                    <td>
-                                        Juri
-                                    </td>
-                                    <td>
-                                        7600
-                                    </td>
-                                    <td>
-                                        13000
-                                    </td>
+                                <?php foreach ($sellers as $r) { ?>
+                                    <tr>
+                                        <td>
+                                        <?php echo $r['seller_firstname'] ?>
+                                        </td>
+                                        <td>
+                                        <?php echo $r['seller_lastname'] ?>
+                                        </td>
+                                        <td>
+                                        <?php echo $r['bonus'] ?>
+                                        </td>
+                                        <td>
+                                        <?php echo $r['target'] ?>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>

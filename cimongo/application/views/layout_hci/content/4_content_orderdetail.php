@@ -24,22 +24,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-7 col-md-10 col-sm-11">
             <div class="horizontal-steps mt-4 mb-4 pb-5">
-                <div class="horizontal-steps-content">
-                    <div class="step-item">
-                        <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="20/08/2018 07:24 PM">Order</span>
-                    </div>
-                    <div class="step-item current">
-                        <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="21/08/2018 11:32 AM">Processing</span>
-                    </div>
-                    <div class="step-item">
-                        <span>Unsuccessful</span>
-                    </div>
-                    <div class="step-item">
-                        <span>Success</span>
-                    </div>
-                </div>
-
-                <div class="process-line" style="width: 33%;"></div>
+                <?php step_content($order_status['order_status']) ?>
             </div>
         </div>
     </div>
@@ -49,7 +34,7 @@
         <div class="col-lg-8">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="header-title mb-3">Items from Order #12537</h4>
+                    <h4 class="header-title mb-3">Items from Order #<?php echo $order_status['orderNumber'] ?></h4>
 
                     <div class="table-responsive">
                         <table class="table mb-0">
@@ -64,38 +49,21 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>The Military Duffle Bag</td>
-                                    <td>500</td>
-                                    <td>128</td>
-                                    <td>372</td>
-                                    <td>$384</td>
-                                    <td>$142,848</td>
-                                </tr>
-                                <tr>
-                                    <td>Mountain Basket Ball</td>
-                                    <td>400</td>
-                                    <td>199</td>
-                                    <td>201</td>
-                                    <td>$199</td>
-                                    <td>$39,999</td>
-                                </tr>
-                                <tr>
-                                    <td>Wavex Canvas Messenger Bag</td>
-                                    <td>600</td>
-                                    <td>180</td>
-                                    <td>420</td>
-                                    <td>$900</td>
-                                    <td>$378,000</td>
-                                </tr>
-                                <tr>
-                                    <td>The Utility Shirt</td>
-                                    <td>200</td>
-                                    <td>79</td>
-                                    <td>124</td>
-                                    <td>$158</td>
-                                    <td>$19,592</td>
-                                </tr>
+                                <?php
+                                $total = 0;
+                                foreach ($orderdetails as $row) { ?>
+                                    <tr>
+                                        <td><?php echo $row['product'] ?></td>
+                                        <td><?php echo $row['deposit'] ?></td>
+                                        <td><?php echo $row['withdraw'] ?></td>
+                                        <td><?php echo $row['sell'] ?></td>
+                                        <td><?php echo $row['price'] ?></td>
+                                        <td><?php echo $row['total'] ?></td>
+                                    </tr>
+                                <?php
+                                $total = $total+$row['total'];
+                                }
+                                ?>
                             </tbody>
                         </table>
                     </div>
@@ -121,19 +89,19 @@
                             <tbody>
                                 <tr>
                                     <td>Grand Total :</td>
-                                    <td>$1641</td>
+                                    <td><?php echo $total ?></td>
                                 </tr>
                                 <tr>
                                     <td>Shipping Charge :</td>
-                                    <td>$23</td>
+                                    <td><?php echo $sc = 40 ?></td>
                                 </tr>
                                 <tr>
                                     <td>Estimated Tax :</td>
-                                    <td>$19.22</td>
+                                    <td><?php echo $est = 170 ?></td>
                                 </tr>
                                 <tr>
                                     <th>Total :</th>
-                                    <th>$1683.22</th>
+                                    <th><?php echo $total = $total+$sc+$est ?></th>
                                 </tr>
                             </tbody>
                         </table>
@@ -215,3 +183,56 @@
 <!-- container -->
 </div>
 <!-- content -->
+<?php
+function step_content($status)
+{
+    if ($status == "success")
+        echo '<div class="horizontal-steps-content">
+    <div class="step-item">
+        <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="20/08/2018 07:24 PM">Order</span>
+    </div>
+    <div class="step-item current">
+        <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="21/08/2018 11:32 AM">Processing</span>
+    </div>
+    <div class="step-item">
+        <span>Unsuccessful</span>
+    </div>
+    <div class="step-item">
+        <span>Success</span>
+    </div>
+</div>
+<div class="process-line" style="width: 100%;"></div>';
+    elseif ($status == "unsuccess")
+        echo '<div class="horizontal-steps-content">
+    <div class="step-item">
+        <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="20/08/2018 07:24 PM">Order</span>
+    </div>
+    <div class="step-item">
+        <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="21/08/2018 11:32 AM">Processing</span>
+    </div>
+    <div class="step-item current">
+        <span>Unsuccessful</span>
+    </div>
+    <div class="step-item">
+        <span>Success</span>
+    </div>
+</div>
+<div class="process-line" style="width: 66%;"></div>';
+    else
+        echo '<div class="horizontal-steps-content">
+    <div class="step-item">
+        <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="20/08/2018 07:24 PM">Order</span>
+    </div>
+    <div class="step-item">
+        <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="21/08/2018 11:32 AM">Processing</span>
+    </div>
+    <div class="step-item">
+        <span>Unsuccessful</span>
+    </div>
+    <div class="step-item current">
+        <span>Success</span>
+    </div>
+</div>
+<div class="process-line" style="width: 33%;"></div>';
+}
+?>

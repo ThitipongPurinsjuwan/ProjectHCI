@@ -6,6 +6,7 @@
         $condition = array(
             '_id' => $CI->mongo_db->create_document_id($id)
         );
+        print_r($condition);
         $result = $CI->categories_model->findOne($condition);
         return $result['name'];
     }

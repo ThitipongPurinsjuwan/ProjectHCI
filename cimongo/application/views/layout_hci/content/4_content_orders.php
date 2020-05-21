@@ -50,80 +50,26 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                            <?php foreach ($order as $r) { ?>
                                                 <tr>
-                                                    <td>#BM9708</td>
+                                                    <td><?php echo $r['orderNumber']?></td>
                                                     <td>
-                                                        Kanya Pankong
+                                                    <?php echo $r['seller_id'] ?>
                                                     </td>
                                                     <td>
-                                                        August 05 2018
+                                                    <?php echo "2020-08-06" ?>
                                                     </td>
                                                     <td>
-                                                        $176.41
+                                                    <?php echo $r['total'] ?>
                                                     </td>
                                                     <td>
-                                                        <h5><span class="badge badge-success-lighten">Success</span></h5>
+                                                        <h5><?php echo order_check_status($r['order_status']) ?></h5>
                                                     </td>
                                                     <td>
-                                                        <a href="<?php echo base_url("main_hci/orderdetail") ?>" class="action-icon"> <i class="mdi mdi-eye"></i></a>
+                                                    <?php echo  order_check_action($r['order_status'],$r['_id']) ?>
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>#BM9709</td>
-                                                    <td>
-                                                        Amon kumpougmit
-                                                    </td>
-                                                    <td>
-                                                        August 05 2018
-                                                    </td>
-                                                    <td>
-                                                        $176.41
-                                                    </td>
-                                                    <td>
-                                                        <h5><span class="badge badge-warning-lighten">processing</span></h5>
-                                                    </td>
-                                                    <td>
-                                                        <a href="<?php echo base_url("main_hci/orderdetail") ?>" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>#BM9710</td>
-                                                    <td>
-                                                        wilawan soisman
-                                                    </td>
-                                                    <td>
-                                                        August 05 2018
-                                                    </td>
-                                                    <td>
-                                                        $176.41
-                                                    </td>
-                                                    <td>
-                                                        <h5><span class="badge badge-danger-lighten">Unsuccessful</span></h5>
-                                                    </td>
-                                                    <td>
-                                                        <a href="<?php echo base_url("main_hci/orderdetail") ?>" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>#BM9711</td>
-                                                    <td>
-                                                        Pinsuwan
-                                                    </td>
-                                                    <td>
-                                                        August 05 2018
-                                                    </td>
-                                                    <td>
-                                                        $176.41
-                                                    </td>
-                                                    <td>
-                                                        <h5><span class="badge badge-success-lighten">Success</span></h5>
-                                                    </td>
-                                                    <td>
-                                                        <a href="<?php echo base_url("main_hci/orderdetail") ?>" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                                    </td>
-                                                </tr>
+                                                <?php } ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -136,3 +82,22 @@
                 </div> <!-- container -->
 
                 </div> <!-- content -->
+                <?php
+                function order_check_status($status)
+                {
+                    if ($status == "success") {
+                        echo '<span class="badge badge-success">Success</span>';
+                    } elseif ($status == "unsuccess")
+                        echo '<span class="badge badge-danger">Unsuccess</span>';
+                    else
+                        echo '<span class="badge badge-warning">Processing</span>';
+                }
+
+                function order_check_action($status,$id)
+                {
+                    if ($status == "success")
+                        echo "<a href=".base_url("main_hci/orderdetail/".$id)." class='action-icon'> <i class='mdi mdi-eye'></i></a>";
+                    else
+                        echo "<a href=". base_url("main_hci/orderdetail/".$id)." class='action-icon'> <i class='mdi mdi-eye'></i></a><a href=".base_url("main_hci/order_bill")." class='action-icon'> <i class='mdi mdi-square-edit-outline'></i></a>";
+                }
+                ?>

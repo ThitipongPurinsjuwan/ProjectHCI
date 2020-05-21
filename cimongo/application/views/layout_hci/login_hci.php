@@ -26,6 +26,16 @@
 <body>
     <!-- have to chang src -->
     <div class="container">
+        <?php if ($this->session->flashdata('false')) { ?>
+            <div class="row mt-2">
+                <div class="col-md-12">
+                    <div class="alert alert-danger" role="alert">
+                        <i class="dripicons-checkmark mr-2"></i> username or password <strong>Invadid</strong> .
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+        <div class="row m-5"></div>
         <div class="d-flex justify-content-center">
             <div class="user_card fadeInDown">
                 <div class="d-flex justify-content-center ">
@@ -35,18 +45,18 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-center form_container ">
-                    <form>
+                    <form action="<?php echo base_url("main_hci/check_user") ?>" method="post">
                         <div class="input-group mb-3">
                             <div class="input-group-append fadeIn second">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" name="" class="form-control input_user fadeIn second" value="" placeholder="username">
+                            <input type="text" name="username" id="username" class="form-control input_user fadeIn second" value="" placeholder="username">
                         </div>
                         <div class="input-group mb-2">
                             <div class="input-group-append fadeIn third">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" name="" class="form-control input_pass fadeIn third" value="" placeholder="password">
+                            <input type="password" name="password" id="password" class="form-control input_pass fadeIn third" value="" placeholder="password">
                         </div>
                         <div class="form-group fadeIn fourth">
                             <div class="custom-control custom-checkbox text-white">
@@ -55,7 +65,7 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-center mt-3 login_container">
-                            <a href="<?php echo base_url("main_hci/home") ?>" type="button" name="button" class="btn login_btn fadeIn fourth">Login</a>
+                            <button type="submit" class="btn login_btn fadeIn fourth">Login</button>
                         </div>
                     </form>
                 </div>
@@ -83,4 +93,5 @@
     <!-- demo app -->
     <script src="<?php echo base_url("public/assets/js/pages/demo.dashboard.js") ?>"></script>
 </body>
+
 </html>
